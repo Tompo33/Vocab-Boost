@@ -2,22 +2,22 @@
 import { GoogleGenAI } from "@google/genai";
 
 export async function getFeedback(userText: string): Promise<string> {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || 'FAKE_API_KEY_FOR_DEVELOPMENT' });
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   const systemInstruction = `
-ÄokoÄ¾vek ti tu napÃ­Å¡e v angliÄtine (text), v prvom rade opravÃ­Å¡. NapÃ­Å¡eÅ¡: "Najprv oprava:" a nÃ¡sledne prepÃ­Å¡eÅ¡ ten text a v *bolde* dÃ¡Å¡, Äo si zmenil. 
+Čokoľvek ti tu napíše v angličtine (text), v prvom rade opravíš. Napíšeš: "Najprv oprava:" a následne prepíšeš ten text a v *bolde* dáš, čo si zmenil. 
 
-Pre seba zhodnoÅ¥ ÃºroveÅ angliÄtiny podÄ¾a CEFR. 
+Pre seba zhodnoť úroveň angličtiny podľa CEFR. 
 
-NÃ¡sledne bude sekcia: "Teraz tuning:", kde navrhneÅ¡ vylepÅ¡enÃ½ text - o ÃºroveÅ vyÅ¡Å¡ie podÄ¾a tvojho ohodnotenia pÃ´vodnÃ©ho textu. Ak ho zhodnotÃ­Å¡ na B1, navrhnutÃ½ upgrade bude B2. Ak a2, tak na b1. Ak c1, tak na c2. Nie priveÄ¾a zmien, sÃºstreÄ sa prevaÅ¾ne na nÃ¡vrh hovorovÃ½ch, prirodzenÃ½ch frÃ¡z a linkerov. 
+Následne bude sekcia: "Teraz tuning:", kde navrhneš vylepšený text - o úroveň vyššie podľa tvojho ohodnotenia pôvodného textu. Ak ho zhodnotíš na B1, navrhnutý upgrade bude B2. Ak a2, tak na b1. Ak c1, tak na c2. Nie priveľa zmien, sústreď sa prevažne na návrh hovorových, prirodzených fráz a linkerov. 
 
-NÃ¡sledne sekcia: "PÃ¡r synonÃ½m:", kde pod text doplÅ 3 synonymÃ¡ (o ÃºroveÅ vyÅ¡Å¡ie oproti pÃ´vodnej CEFR Ãºrovni) pre kÄ¾ÃºÄovÃ© slovÃ¡ z pÃ´vodnÃ©ho textu, napr: lovely - delightful. 
+Následne sekcia: "Pár synoným:", kde pod text doplň 3 synonymá (o úroveň vyššie oproti pôvodnej CEFR úrovni) pre kľúčové slová z pôvodného textu, napr: lovely - delightful. 
 
-A na konci napÃ­Å¡: "Tvoja achilovka:" a vypichni jednu konkrÃ©tnu chybu z pÃ´vodnÃ©ho textu a vysvetli, preÄo je to chyba a ÄÃ­m ju nahradiÅ¥. 
+A na konci napíš: "Tvoja achilovka:" a vypichni jednu konkrétnu chybu z pôvodného textu a vysvetli, prečo je to chyba a čím ju nahradiť. 
 
-Nenavrhuj ÄalÅ¡iu otÃ¡zku po tÃ½chto feedbackoch, niÄ sa nepÃ½taj. 
+Nenavrhuj ďalšiu otázku po týchto feedbackoch, nič sa nepýtaj. 
 
-Na Ãºplnom konci po sekcii Achilovka dopÃ­Å¡ presne tÃºto vetu: "Nezabudni si tento feeback screenshotnÃºÅ¥, lebo zmizne. ;)"
+Na úplnom konci po sekcii Achilovka dopíš presne túto vetu: "Nezabudni si tento feeback screenshotnúť, lebo zmizne. ;)"
   `;
 
   try {
@@ -30,9 +30,9 @@ Na Ãºplnom konci po sekcii Achilovka dopÃ­Å¡ presne tÃºto vetu: "Nezabud
       },
     });
 
-    return response.text || "Nepodarilo sa vygenerovaÅ¥ feedback. SkÃºs to znova.";
+    return response.text || "Nepodarilo sa vygenerovať feedback. Skús to znova.";
   } catch (error) {
     console.error("Gemini Error:", error);
-    return "Ups, nieÄo sa pokazilo pri komunikÃ¡cii s AI. Skontroluj svoje pripojenie.";
+    return "Ups, niečo sa pokazilo pri komunikácii s AI. Skontroluj svoje pripojenie.";
   }
 }
