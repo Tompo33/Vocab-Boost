@@ -37,7 +37,7 @@ const App: React.FC = () => {
       <header className="w-full text-center mt-8">
         <h1 className="text-4xl font-extrabold text-blue-900 tracking-tight">Len pár viet</h1>
         <p className="text-gray-500 mt-2 text-sm font-medium">
-          Reaguj na otázku 3-5 vetami. Zlepšuj sa krok po kroku, vetu po vete.
+          Reaguj na otázku 3-5 vetami. Dostaneš feedback na tvoju achilovku + upgrade textu o úroveň. 
         </p>
       </header>
 
