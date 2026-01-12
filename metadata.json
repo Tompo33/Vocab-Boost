@@ -1,0 +1,5 @@
+{
+  "name": "Len pár viet",
+  "description": "A minimal, AI-powered English language practice application that fetches questions from Google Sheets and provides expert linguistic feedback using Gemini.",
+  "requestFramePermissions": []
+}
