@@ -47,9 +47,9 @@ const App: React.FC = () => {
     <div className="flex flex-col items-center justify-start min-h-screen p-4 md:p-8 space-y-8 max-w-4xl mx-auto font-serif">
       {/* Header */}
       <header className="w-full text-center mt-8 flex flex-col items-center">
-        <h1 className="text-4xl font-bold text-gray-800 tracking-tight">Take Away English: Tvoja denná porcia angličtiny</h1>
+        <h1 className="text-4xl font-bold text-gray-800 tracking-tight">Take Away English: Tvoja denná porcia angličtiny 🍱</h1>
         <p className="text-gray-600 mt-4 text-base font-medium max-w-2xl mx-auto leading-relaxed">
-          Objednaj si otázku a priprav rýchlu odpoveď (3-5 viet). Dochutím ho správnou gramatikou, naservírujem vylepšenú verziu a vyriešim tvoju najväčšiu "achilovku" ako dezert.
+          Ponúkam ti otázku. Priprav si na ňu rýchlu odpoveď, 3-5 viet. Snaž sa 😉 Potom požiadaj o feedback. Opravím tvoj text, naservírujem ti o stupeň lepšiu verziu, nech vidíš, aké máš možnosti do budúcna. Pochválim to pozitívne a zároveň si posvietim na tvoju achilovku. Všetko si to následne môžeš jedným klikom skopírovať a uložiť do vlastných materiálov. Let's go!
         </p>
       </header>
 
