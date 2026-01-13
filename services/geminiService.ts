@@ -29,7 +29,7 @@ DÔLEŽITÉ: Chýbajúcu medzeru po bodke na konci vety (napr. "Hello.How are yo
 
 Nenavrhuj ďalšie otázky.
 
-Na úplnom konci pod čiarou dopíš presne túto vetu: "Nezabudni si tento feedback screenshotnúť, lebo zmizne. ;)"
+Na úplnom konci pod čiarou dopíš presne túto vetu: "📸 Nezabudni si tento feedback screenshotnúť, lebo zmizne!"
   `;
 
   try {

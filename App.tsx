@@ -30,7 +30,7 @@ const App: React.FC = () => {
 
   const handleCopy = () => {
     if (!feedback) return;
-    const footerText = "Nezabudni si tento feedback screenshotnúť, lebo zmizne. ;)";
+    const footerText = "📸 Nezabudni si tento feedback screenshotnúť, lebo zmizne!";
     const textToCopy = feedback.replace(footerText, "").trim();
     
     navigator.clipboard.writeText(textToCopy).then(() => {
