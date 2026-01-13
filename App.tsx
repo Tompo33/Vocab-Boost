@@ -160,10 +160,12 @@ const App: React.FC = () => {
 // Helper to handle bold (**HEADLINE**) and italic (*correction*) formatting
 const renderFeedback = (text: string) => {
   const parts = text.split(/(\*\*.*?\*\*|\*.*?\*)/g);
+  let currentHeader = '';
   
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
-      const content = part.slice(2, -2);
+      const content = part.slice(2, -2).trim();
+      currentHeader = content;
       return (
         <span key={i} className="block mt-6 mb-2 text-[#204453] font-bold tracking-wide uppercase">
           {content}
@@ -172,8 +174,18 @@ const renderFeedback = (text: string) => {
     }
     if (part.startsWith('*') && part.endsWith('*')) {
       const content = part.slice(1, -1);
+      
+      // logic to determine color based on current section
+      let colorClass = "text-blue-700"; // Default Navy
+      let decorationClass = "decoration-blue-200";
+
+      if (currentHeader.includes("NAJPRV OPRAVA")) {
+        colorClass = "text-fuchsia-600"; // Magenta for corrections
+        decorationClass = "decoration-fuchsia-200";
+      }
+
       return (
-        <em key={i} className="text-blue-700 font-bold not-italic underline decoration-blue-200 decoration-2 underline-offset-4">
+        <em key={i} className={`${colorClass} font-bold not-italic underline ${decorationClass} decoration-2 underline-offset-4`}>
           {content}
         </em>
       );
