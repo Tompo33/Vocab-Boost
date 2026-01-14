@@ -74,7 +74,7 @@ const App: React.FC = () => {
           disabled={isLoadingQuestion}
           className="bg-[#5bc0ec] hover:opacity-90 text-white px-8 py-3 rounded-full font-bold transition-all transform active:scale-95 disabled:opacity-50 shadow-md"
         >
-          {isLoadingQuestion ? 'Chvíľku strpenia...' : 'Naservíruj mi ďalšiu otázku'}
+          {isLoadingQuestion ? 'Chvíľku strpenia...' : 'Naservíruj mi inú otázku'}
         </button>
       </section>
 
